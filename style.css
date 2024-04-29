@@ -1,9 +1,12 @@
-body{
+* {
     margin: 0;
-    padding: 0;
+}
+body{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 header{
     background-color: rgb(236, 204, 237);
+    padding: 25px;
 }
 .contenedor-titulo{
     display: flex;
@@ -33,19 +36,93 @@ header{
     color: blue;
 }
 
-#barraBusqueda {
-    position: absolute;
-    top: 7%;
-    left: 23%;
+.search-form {
+    position: fixed;
+    top: 30%;
+    left: 50%;
     transform: translate(-50%, -50%);
-    width: 200px; /* Ajusta el ancho según sea necesario */
-    padding: 8px;
-    border: 2px solid #ccc;
-    border-radius: 20px;
-    background-color: #fff;
-    z-index: 1; /* Asegura que la barra esté por encima del logo de búsqueda */
+    background-color: white;
+    width: 50%;
+    padding: 20px;
+    border-radius: 25px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
 }
-.buscar {
+.hidden {
+    display: none;
+}
+#close-search {
+    position: absolute;
+    top: 30px;
+    right: 1px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #ff0000;
+}
+.search-input {
+    width: 98%;
+    padding: 8px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+}
+#search-results {
+    display: none;
+}
+#search-results a {
+    color: black;
+    text-decoration: none;
+}
+#search-results a:hover {
+    text-decoration: underline;
+}
+
+
+
+.contenedor {
+    padding: 25px;
+    background-image: url(img/fondoPrincipal.jpg);
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px;
+}
+#text {
+    display: flex;
+    flex-direction: column;
+    background: rgb(255, 255, 255);
+    text-align: left;
+    justify-content: center;
+    width: 38%;
+    height: 38%;
     position: relative;
-    z-index: 0;
+    top: 54%;
+    left: 28%;
+    transform: translate(-50%, -50%);
+    padding: 40px;
+    font-size: 40px;
+    border-radius: 20px;
+    color: rgb(14, 27, 77);
+}
+.btnPrincipal {
+    width: 28%;
+    height: 50px;
+    border-radius: 25px;
+    margin-top: 20px;
+    color: rgb(14, 27, 77);
+    border-color: rgb(14, 27, 77);
+    background: none;
+    font-size: 15px;
+}
+
+
+
+
+.product {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }

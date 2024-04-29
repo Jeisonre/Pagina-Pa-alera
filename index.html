@@ -10,10 +10,10 @@
     <header>
         <div class="contenedor-titulo">
             <img class="buscar" src="img/buscar.png" alt="" onclick="toggleBusqueda()">
-            <input type="search" id="barraBusqueda" placeholder="Buscar..." style="display: none;">
             <h1>Ecomerce</h1>
             <img class="carrito" src="img/carrito.png" alt="">
         </div>
+        <br>
         <div class="contenedor-barra">
             <nav class="barraMenu">
                 <ul>
@@ -24,69 +24,53 @@
             </nav>
         </div>
     </header>
+
+    <form id="search-form" class="search-form hidden">
+        <button type="button" id="close-search" onclick="toggleBusqueda()">X</button>
+        <input type="search" id="search-input" class="search-input" placeholder="Buscar...">
+        <div id="search-results"></div>
+    </form>
+
     <main>
+        <div class="contenedor">
+            <div id="text">
+                <h3>Mejores productos aqui y punto</h3>
+                <button type="button" class="btnPrincipal">Ver todo</button>
+            </div>
+        </div>
+
+        <h1>Productos</h1>
+
+        <div id="producto-1" class="product searchable-element">
+            <h2>Producto 1</h2>
+            <p>Descripción del producto 1.</p>
+        </div>
         
+        <div id="producto-2" class="product searchable-element">
+            <h2>Producto 2</h2>
+            <p>Descripción del producto 2.</p>
+        </div>
+        
+        <p id="subindice" class="product searchable-element">Programacion</p>
+        
+        <p id="producto-3" class="product searchable-element">hola mundo</p>
+        
+        <div id="producto-4" class="product searchable-element">
+            <h2>Producto 3</h2>
+            <p>Descripción del producto 3.</p>
+        </div>
+        
+        <div id="producto-5" class="product searchable-element">
+            <h2>Producto 4</h2>
+            <p>Descripción del producto 4.</p>
+        </div>
+        
+        <p id="carros" class="product searchable-element">Carros nuevos</p>
+
     </main>
 </body>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Asociar la función toggleBusqueda() al evento de clic en el logo de búsqueda
-        document.getElementById('buscar').addEventListener('click', toggleBusqueda);
-    });
-
-    function toggleBusqueda() {
-        var barraBusqueda = document.getElementById('barraBusqueda');
-        var logoBuscar = document.querySelector('.buscar');
-        
-        if (barraBusqueda.style.display === 'none') {
-            barraBusqueda.style.display = 'block';
-            // Añadir evento de escucha para ocultar la barra cuando se haga clic fuera de ella
-            document.addEventListener('click', handleOutsideClick);
-            // Añadir evento de escucha para la tecla Enter
-            barraBusqueda.addEventListener('keypress', handleEnterKey);
-            barraBusqueda.focus(); // Dar foco a la barra de búsqueda
-        } else {
-            barraBusqueda.style.display = 'none';
-            // Remover los eventos de escucha cuando se oculta la barra
-            document.removeEventListener('click', handleOutsideClick);
-            barraBusqueda.removeEventListener('keypress', handleEnterKey);
-        }
-    }
-
-    function handleEnterKey(event) {
-        if (event.key === 'Enter') {
-            realizarBusqueda();
-        }
-    }
-
-    function handleOutsideClick(event) {
-        var barraBusqueda = document.getElementById('barraBusqueda');
-        var logoBuscar = document.querySelector('.buscar');
-        if (!barraBusqueda.contains(event.target) && event.target !== logoBuscar) {
-            toggleBusqueda();
-        }
-    }
-
-    function realizarBusqueda() {
-        var barraBusqueda = document.getElementById('barraBusqueda');
-        var consulta = barraBusqueda.value.trim().toLowerCase();
-        var titulos = document.getElementsByTagName('h1'); // Obtener todos los títulos de la página
-
-        // Recorrer todos los títulos y resaltar las coincidencias
-        for (var i = 0; i < titulos.length; i++) {
-            var titulo = titulos[i].innerText.toLowerCase(); // Obtener el texto del título en minúsculas
-            var contenedor = titulos[i]; // Obtener el contenedor del título
-            
-            // Resaltar coincidencias
-            var textoResaltado = titulo.replace(new RegExp(consulta, 'gi'), function(match) {
-                return '<span style="background-color: yellow;">' + match + '</span>';
-            });
-            contenedor.innerHTML = textoResaltado;
-        }
-        toggleBusqueda();
-    }
-</script>
+<script src="main.js"></script>
 
 
 </html>
