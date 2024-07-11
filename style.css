@@ -118,8 +118,11 @@ header{
 }
 
 h1 {
-    text-align: center;
+    text-align: left;
     padding: 20px;
+    margin-top: 50px;
+    margin-left: 70px;
+    font-size: 30px;
 }
 
 .productos {
@@ -205,4 +208,60 @@ h1 {
     width: 20px; /* Tamaño mínimo de la imagen */
     height: auto;
     margin-right: 10px;
+}
+
+.secciones-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 40px 110px;
+    align-items: center;
+}
+.seccion-card {
+    display: flex;
+    /* box-shadow: 0 4px 8px rgb(0, 0, 0,0.1); */
+    overflow: hidden;
+    width: 100%;
+}
+.seccion-image img {
+    width: 100%;
+    height: auto;
+    box-shadow: 0 8px 8px rgb(0, 0, 0,0.1);
+    border-radius: 50px;
+    
+}
+.seccion-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    padding: 70px;
+}
+.seccion-info h2 {
+    margin-top: 0;
+    color: #333;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    font-size: 40px;
+}
+.seccion-info p {
+    color: #666;
+    font-size: 23px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+.seccion-info button {
+    background-color: #ffffff;
+    border: 1px solid #1f2e86;
+    color: #1f2e86;
+    padding: 5px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-bottom: 15px;
+    width: 30%;
+    font-size: 20px;
+}
+.seccion-info button:hover {
+    background-color: #1f2e86;
+    color: #ffffff;
 }
